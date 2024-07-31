@@ -25,6 +25,7 @@
 <script>
 
       FrameGlider.addDraggableUnit( new FG_Unit(document.getElementById("Dra2"), {mouseDownCallback: mouseDownDraggable, mouseOverCallback: mouseOverDraggable, mouseOutCallback: mouseOutDraggable}) );
+      FrameGlider.addDroppableUnit( new FG_Unit(document.getElementById("paste-board"), {mouseUpCallback: mouseUpDroppable, mouseOverCallback: mouseOverDroppable, mouseOutCallback: mouseOutDroppable}) );
       FrameGlider.addDroppableUnit( new FG_Unit(document.getElementById("Dro2"), {mouseUpCallback: mouseUpDroppable, mouseOverCallback: mouseOverDroppable, mouseOutCallback: mouseOutDroppable}) );
       FrameGlider.addPointOfInterestUnit( new FG_Unit(document.getElementById("Poi2"), {mouseOverCallback: mouseOverPointOfInterest, mouseOutCallback: mouseOutPointOfInterest}) );
 
