@@ -16,7 +16,7 @@
     </div>
 <BR>
   <body id="bodyB">
-    <div id="mydiv" style="position: absolute; top: 55px; left: 5px; width: 50px; height: 50px; border: 1px solid black;">
+    <div id="Dra1" style="position: absolute; top: 55px; left: 5px; width: 50px; height: 50px; border: 1px solid black;">
       Dra1
     </div>
     <div id="Dro1" style="position: absolute; top: 110px; left: 5px; width: 50px; height: 50px; border: 1px solid black;">
@@ -39,10 +39,6 @@
           top.document.getElementById("messages").innerHTML = "Dropped <b>" + top.dragging + "</b> on <b>nothing</b>";
           top.dragging = "";
       }
-
-      FrameGlider.addDraggableUnit( a = new FG_Unit(document.getElementById("Dra1"), {mouseDownCallback: mouseDownDraggable, mouseOverCallback: mouseOverDraggable, mouseOutCallback: mouseOutDraggable}) );
-      FrameGlider.addDroppableUnit( b = new FG_Unit(document.getElementById("Dro1"), {mouseUpCallback: mouseUpDroppable, mouseOverCallback: mouseOverDroppable, mouseOutCallback: mouseOutDroppable}) );
-      FrameGlider.addPointOfInterestUnit( c = new FG_Unit(document.getElementById("Poi1"), {mouseOverCallback: mouseOverPointOfInterest, mouseOutCallback: mouseOutPointOfInterest}) );
 
 </script>
 
