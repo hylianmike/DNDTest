@@ -21,7 +21,7 @@ function mouseOverDroppable(unit) {
 }
 
 function mouseOutDroppable(unit) {
-    unit.element.style.backgroundColor = "#FFFFFF";
+    unit.element.style.backgroundColor = "#C9C9C9";
 }
 
 function mouseOverPointOfInterest(unit) {
