@@ -1,40 +1,51 @@
-<!DOCTYPE HTML>
 <html>
 <head>
-    <style>
-        #div1, #div2, #drag1 {
-            float: left;
-            width: 100px;
-            height: 35px;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid black;
-        }
-    </style>
-<script>
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
-</script>
+<script src="frameGlider.js"></script>
+<script src="functions.js"></script>
 </head>
-<body>
+<body id="bodyA">
+    <div style="float:left;">
+      <span id="messages" style="background-color: #FFFF99;">
+        Informational messages will appear here
+      </span>
+    </div>
+    <div style="float:right;">
+      <span style="border: 1px solid black; background-color: #FF9999;"><b>Dra#</b> - Draggable</span>
+      <span style="border: 1px solid black; background-color: #99FF99;"><b>Dro#</b> - Droppable</span>
+      <span style="border: 1px solid black; background-color: #9999FF;"><b>Poi#</b> = Point of interest</span>
+    </div>
+<BR>
+  <body id="bodyB">
+    <div id="Dra1" style="position: absolute; top: 55px; left: 5px; width: 50px; height: 50px; border: 1px solid black;">
+      Dra1
+    </div>
+    <div id="Dro1" style="position: absolute; top: 110px; left: 5px; width: 50px; height: 50px; border: 1px solid black;">
+      Dro1
+    </div>
+    <div id="Poi1" style="position: absolute; top: 165px; left: 5px; width: 50px; height: 50px; border: 1px solid black;">
+      Poi1
+    </div>
+<div id="pos"></div>
+<iframe id="c" name="c" src="c.html" width=1000 height=500 style="position:absolute; top:50px; left:100px;"></iframe>
+<img id="image" src="text.png" style="position:absolute; top:0px; left:0px; display:none;">
 
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <img id="drag1" src="./simple/text.png" draggable="true" ondragstart="drag(event)">
-</div>
+<script>
+
+      FrameGlider.mouseFollower.element = document.getElementById("image");
+      FrameGlider.mouseFollower.x = 10;
+      FrameGlider.mouseFollower.y = 10;
+
+      FrameGlider.droppedOnNothing = function(mousePos) {
+          top.document.getElementById("messages").innerHTML = "Dropped <b>" + top.dragging + "</b> on <b>nothing</b>";
+          top.dragging = "";
+      }
+
+      FrameGlider.addDraggableUnit( a = new FG_Unit(document.getElementById("Dra1"), {mouseDownCallback: mouseDownDraggable, mouseOverCallback: mouseOverDraggable, mouseOutCallback: mouseOutDraggable}) );
+      FrameGlider.addDraggableUnit( b = new FG_Unit(document.getElementById("Dro1"), {mouseDownCallback: mouseDownDraggable, mouseOverCallback: mouseOverDraggable, mouseOutCallback: mouseOutDraggable}) );
+      FrameGlider.addDraggableUnit( c = new FG_Unit(document.getElementById("Poi1"), {mouseDownCallback: mouseDownDraggable, mouseOverCallback: mouseOverDraggable, mouseOutCallback: mouseOutDraggable}) );
 
 
-<iframe id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></iframe>
+</script>
 
 </body>
 </html>
