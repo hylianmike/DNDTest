@@ -1,0 +1,27 @@
+<html>
+<head>
+<script src="../frameGlider.js"></script>
+<script src="functions.js"></script>
+</head>
+<body id="bodyD">
+    <div id="Dra3" style="position: absolute; top: 5px; left: 5px; width: 50px; height: 50px; border: 1px solid black;">
+      Dra3
+    </div>
+    <div id="Dro3" style="position: absolute; top: 5px; left: 65px; width: 50px; height: 50px; border: 1px solid black;">
+      Dro3
+    </div>
+    <div id="Poi3" style="position: absolute; top: 5px; left: 125px; width: 50px; height: 50px; border: 1px solid black;">
+      Poi3
+    </div>
+<BR><BR><BR>
+<div id="pos"></div>
+<script>
+
+      FrameGlider.addDraggableUnit( new FG_Unit(document.getElementById("Dra3"), {mouseDownCallback: mouseDownDraggable, mouseOverCallback: mouseOverDraggable, mouseOutCallback: mouseOutDraggable}) );
+      FrameGlider.addDroppableUnit( new FG_Unit(document.getElementById("Dro3"), {mouseUpCallback: mouseUpDroppable, mouseOverCallback: mouseOverDroppable, mouseOutCallback: mouseOutDroppable}) );
+      FrameGlider.addPointOfInterestUnit( new FG_Unit(document.getElementById("Poi3"), {mouseOverCallback: mouseOverPointOfInterest, mouseOutCallback: mouseOutPointOfInterest}) );
+
+</script>
+
+</body>
+</html>
